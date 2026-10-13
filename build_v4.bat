@@ -3,7 +3,7 @@ setlocal
 cd /d "%~dp0"
 
 echo ========================================================
-echo       Building Tools V4.0.exe (Modernized Edition)
+echo       Building Tools V4.0.4.exe (Modernized Edition)
 echo ========================================================
 echo.
 
@@ -21,13 +21,13 @@ if "%CSC_EXE%"=="" (
 )
 
 echo [*] Using compiler: %CSC_EXE%
-echo [*] Embedding payload: Tools V4.0.ps1
+echo [*] Embedding payload: Tools V4.0.4.ps1
 echo [*] Applying icon: SUO_tools.ico
 echo [*] Applying UAC manifest: build\app.manifest
 echo.
 
-echo [*] Compiling Tools V4.0.3.exe...
-"%CSC_EXE%" /nologo /target:exe /optimize+ /out:"Tools V4.0.3.exe" "/res:Tools V4.0.ps1,ToolsV4.ps1" /win32icon:"SUO_tools.ico" /win32manifest:"build\app.manifest" "build\Program.cs"
+echo [*] Compiling Tools V4.0.4.exe...
+"%CSC_EXE%" /nologo /target:exe /optimize+ /out:"Tools V4.0.4.exe" "/res:Tools V4.0.4.ps1,ToolsV4.ps1" /win32icon:"SUO_tools.ico" /win32manifest:"build\app.manifest" "build\Program.cs"
 
 if %errorlevel% neq 0 (
     echo.
@@ -37,14 +37,14 @@ if %errorlevel% neq 0 (
 )
 
 echo [*] Updating Tools V4.0.exe...
-copy /y "Tools V4.0.3.exe" "Tools V4.0.exe" >nul 2>&1
+copy /y "Tools V4.0.4.exe" "Tools V4.0.exe" >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [NOTE] Tools V4.0.exe is currently running by another process; Tools V4.0.3.exe was updated.
+    echo [NOTE] Tools V4.0.exe is currently running by another process; Tools V4.0.4.exe was updated.
 ) else (
     echo [*] Tools V4.0.exe updated successfully.
 )
 
 echo.
-echo [SUCCESS] Tools V4.0.3.exe built successfully!
+echo [SUCCESS] Tools V4.0.4.exe built successfully!
 echo.
 pause

@@ -9,15 +9,15 @@ using System.Text;
 using System.Windows.Forms;
 
 [assembly: AssemblyTitle("HV Bypass Tool")]
-[assembly: AssemblyDescription("HV Bypass Tool v4.0.2 Modernized Edition")]
+[assembly: AssemblyDescription("HV Bypass Tool v4.0.4 Modernized Edition")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Onennabe")]
 [assembly: AssemblyProduct("HV Bypass Tool")]
 [assembly: AssemblyCopyright("Copyright © Onennabe 2026")]
 [assembly: AssemblyTrademark("Onennabe")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("4.0.2.0")]
-[assembly: AssemblyFileVersion("4.0.2.0")]
+[assembly: AssemblyVersion("4.0.4.0")]
+[assembly: AssemblyFileVersion("4.0.4.0")]
 
 namespace ToolsV4
 {
@@ -101,7 +101,7 @@ namespace ToolsV4
                     }
                     else
                     {
-                        MessageBox.Show("Administrator privileges are required to run this tool.", "HV Bypass Tool v4.0.2", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Administrator privileges are required to run this tool.", "HV Bypass Tool v4.0.4", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     return 1;
                 }
@@ -125,11 +125,11 @@ namespace ToolsV4
             {
                 string msg = "Failed to extract embedded payload.";
                 if (isCli) Console.WriteLine("[ERROR] " + msg);
-                else MessageBox.Show(msg, "HV Bypass Tool v4.0.2", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                else MessageBox.Show(msg, "HV Bypass Tool v4.0.4", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return 1;
             }
 
-            string tempFile = Path.Combine(Path.GetTempPath(), "HV_Tools_v402.ps1");
+            string tempFile = Path.Combine(Path.GetTempPath(), "HV_Tools_v404.ps1");
             try
             {
                 File.WriteAllText(tempFile, scriptContent, new UTF8Encoding(false));
@@ -138,7 +138,7 @@ namespace ToolsV4
             {
                 string msg = "Failed to write temporary script: " + ex.Message;
                 if (isCli) Console.WriteLine("[ERROR] " + msg);
-                else MessageBox.Show(msg, "HV Bypass Tool v4.0.2", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                else MessageBox.Show(msg, "HV Bypass Tool v4.0.4", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return 1;
             }
 
@@ -175,7 +175,7 @@ namespace ToolsV4
             {
                 string msg = "Error starting tool: " + ex.Message;
                 if (isCli) Console.WriteLine("[ERROR] " + msg);
-                else MessageBox.Show(msg, "HV Bypass Tool v4.0.2", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                else MessageBox.Show(msg, "HV Bypass Tool v4.0.4", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 exitCode = 1;
             }
             finally
